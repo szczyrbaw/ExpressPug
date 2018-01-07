@@ -32,12 +32,18 @@ app.get('/google-log', (req, res) => {
         info: "Tutaj zalogujesz do go swojego Google",
         infobutton: "Kliknij",
         name: "Logowanko do google",
+        url: "/google-form"
+    });
+});
+
+app.get('/google-form', (req,res) => {
+    res.render('google-form', {
         url: "/auth/google"
     });
 });
 
-app.get('/auth/google', (req,res) => {
-    res.render('google-form');
+app.get('/auth/google', (req, res) => {
+    res.render('google');
 });
 
 app.listen(3000);
